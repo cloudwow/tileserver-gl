@@ -22,8 +22,8 @@ RUN mkdir -p /usr/src/app
 COPY / /usr/src/app
 RUN cd /usr/src/app && npm install --production
 
-VOLUME /data
 WORKDIR /data
+ADD all.mbtiles /data/
 
 EXPOSE 80
 CMD ["/usr/src/app/run.sh"]
